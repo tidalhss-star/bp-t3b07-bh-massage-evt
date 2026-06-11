@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <meta name="description" content="방화 마사지 이벤트 상세 정보! 방화동 1등 마사지샵의 특별한 혜택, 위치, 가격, 후기까지 모두 확인하세요. 전화 010-6279-0862">
+    <meta name="keywords" content="방화 마사지, 방화 마사지 이벤트, 방화동 마사지, 방화 스포츠마사지, 방화 타이마사지, 방화 마사지 가격, 방화 마사지 후기">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t3b07-bh-massage-evt.vercel.app/info">
+    <meta property="og:title" content="방화 마사지 이벤트 | 상세 정보">
+    <meta property="og:description" content="방화동에서 가장 핫한 마사지 이벤트! 위치, 가격, 종류별 혜택까지 한눈에 확인하세요.">
+    <title>방화 마사지 이벤트 | 상세 정보</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #faf8f5; color: #1a1a1a; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #2d2d2d; text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: #e67e22; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #4a4a4a; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #e67e22; }
+        .nav-cta { background: #e67e22; color: #fff; padding: 10px 24px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.3s, transform 0.2s; }
+        .nav-cta:hover { background: #d35400; transform: translateY(-2px); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: #2d2d2d; border-radius: 2px; transition: 0.3s; }
+        .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #fff8f0 0%, #faf8f5 100%); padding: 80px 20px; }
+        .hero h1 { font-size: 3.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #1a1a1a; }
+        .hero h1 span { color: #e67e22; }
+        .hero p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .hero-cta { display: inline-block; background: #e67e22; color: #fff; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: background 0.3s, transform 0.2s; }
+        .hero-cta:hover { background: #d35400; transform: translateY(-3px); }
+        .section { padding: 80px 0; }
+        .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 16px; color: #1a1a1a; }
+        .section-sub { text-align: center; color: #888; font-size: 1rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card { background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #2d2d2d; }
+        .card p { color: #666; font-size: 0.95rem; }
+        .price-tag { display: inline-block; background: #e67e22; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .info-item { background: #fff; padding: 20px; border-radius: 12px; border-left: 4px solid #e67e22; }
+        .info-item h4 { font-size: 1rem; color: #e67e22; margin-bottom: 6px; }
+        .info-item p { color: #4a4a4a; font-size: 0.95rem; }
+        .faq-item { border-bottom: 1px solid #e8e5e0; padding: 20px 0; }
+        .faq-item h4 { font-size: 1.1rem; cursor: pointer; color: #2d2d2d; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item h4::after { content: '+'; font-size: 1.3rem; color: #e67e22; }
+        .faq-item p { margin-top: 12px; color: #666; font-size: 0.95rem; display: none; }
+        .faq-item.active p { display: block; }
+        .faq-item.active h4::after { content: '-'; }
+        footer { background: #1a1a1a; color: #aaa; padding: 40px 0; text-align: center; }
+        footer a { color: #e67e22; text-decoration: none; }
+        footer p { font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); gap: 16px; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: 2.2rem; }
+            .grid-2, .grid-3, .info-grid { grid-template-columns: 1fr; }
+            .section { padding: 50px 0; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">방화<span>마사지</span></a>
+            <ul class="nav-links">
+                <li><a href="/">홈</a></li>
+                <li><a href="/info">정보</a></li>
+                <li><a href="/pricing">가격</a></li>
+                <li><a href="/review">후기</a></li>
+            </ul>
+            <a href="tel:010-6279-0862" class="nav-cta">010-6279-0862</a>
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 50vh; padding: 60px 20px;">
+        <div>
+            <h1>방화 마사지 <span>상세 정보</span></h1>
+            <p>위치, 운영 시간, 마사지 종류별 설명까지 — 방화동에서 가장 완벽한 마사지 정보를 한곳에 모았어요. 궁금한 건 다 물어보세요!</p>
+            <a href="tel:010-6279-0862" class="hero-cta">전화로 예약하기</a>
+        </div>
+    </section>
+
+    <section class="section" style="background: #fff;">
+        <div class="container">
+            <h2 class="section-title">기본 정보</h2>
+            <p class="section-sub">방화동 중심가에 위치, 언제든지 편하게 방문하세요.</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>📍 위치</h4>
+                    <p>서울 강서구 방화동 123-45 (방화역 3번 출구 도보 3분)</p>
+                </div>
+                <div class="info-item">
+                    <h4>🕐 운영 시간</h4>
+                    <p>매일 10:00 - 22:00 (연중무휴, 전화 예약 시 22시 이후도 가능)</p>
+                </div>
+                <div class="info-item">
+                    <h4>📞 연락처</h4>
+                    <p>010-6279-0862 (문자, 전화 모두 OK)</p>
+                </div>
+                <div class="info-item">
+                    <h4>🏠 주차</h4>
+                    <p>매장 앞 2대 가능, 인근 공영주차장 5분 거리</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">마사지 종류별 특징</h2>
+            <p class="section-sub">각 마사지가 뭔지, 누구한테 좋은지 친절하게 설명해드릴게요.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>💪 스포츠마사지</h3>
+                    <p>운동 후 근육 뭉침 풀어주는 딥티슈 마사지. 평소 운동 많이 하시거나, 허리/어깨 결리시는 분들한테 강추! 약간 시원하게 아픈데 풀리고 나면 개운함이 남달라요.</p>
+                    <span class="price-tag">60분 70,000원</span>
+                </div>
+                <div class="card">
+                    <h3>🖐️ 타이마사지</h3>
+                    <p>스트레칭 위주의 전신 마사지. 누르고 당기고 비트는 동작으로 몸이 가벼워지는 느낌이에요. 유연성 좋아지고 싶은 분들, 장시간 앉아계신 분들께 딱이에요.</p>
+                    <span class="price-tag">60분 60,000원</span>
+                </div>
+                <div class="card">
+                    <h3>👊 지압마사지</h3>
+                    <p>경혈과 혈자리 중심으로 꾹꾹 눌러주는 마사지. 피로 회복, 혈액순환에 좋고 만성 피로 있으신 분들께 강력 추천. 잔 근육까지 시원하게 풀려요.</p>
+                    <span class="price-tag">60분 65,000원</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #fff;">
+        <div class="container">
+            <h2 class="section-title">이벤트 & 혜택</h2>
+            <p class="section-sub">지금 방문하면 특별한 혜택이 기다리고 있어요.</p>
+            <div class="grid-2">
+                <div class="card" style="border: 2px solid #e67e22;">
+                    <h3>🎉 첫 방문 이벤트</h3>
+                    <p>처음 오시는 분들께 10% 할인 + 10분 추가 서비스! "친구 추천으로 왔어요"라고 말씀해주시면 15분 더 추가해드려요.</p>
+                </div>
+                <div class="card">
+                    <h3>🔥 재방문 할인</h3>
+                    <p>두 번째 방문부터 5% 할인, 세 번째 방문 10% 할인! 단골 손님일수록 더 큰 혜택을 드려요. 매번 같은 관리사님 배정 가능.</p>
+                </div>
+                <div class="card">
+                    <h3>👥 2인 이상 할인</h3>
+                    <p>친구, 연인, 가족과 함께 오시면 1인당 10% 할인! 둘이서 120분 코스 예약하면 각자 15% 할인까지.</p>
+                </div>
+                <div class="card">
+                    <h3>⏰ 타임 세일</h3>
+                    <p>평일 오전 10시~12시 방문 시 20% 할인! 오전에 시간 되시는 분들은 진짜 알뜰하게 이용하세요. 오전 예약은 전화로만 가능해요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <p class="section-sub">처음 오시는 분들이 자주 물어보는 질문들을 모았어요. 부담 없이 물어보세요!</p>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="faq-item active">
+                    <h4>예약은 어떻게 하나요?</h4>
+                    <p>전화 010-6279-0862로 언제든지 연락주세요. 문자도 가능하고, 당일 예약도 환영이에요. 원하는 시간과 마사지 종류만 말씀해주시면 됩니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>첫 방문인데 뭘 골라야 할까요?</h4>
+                    <p>처음이시면 타이마사지 추천드려요! 부담 없이 전신 스트레칭 받으면서 몸 상태를 체크해보세요. 나중에 원하시면 스포츠나 지압도 추천해드려요.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>옷은 어떻게 입고 가나요?</h4>
+                    <p>편한 옷 입고 오시면 돼요! 샤워 가능하고, 수건과 가운은 무료로 제공해드려요. 속옷만 입고 받으셔도 되고, 저희가 준비한 옷으로 갈아입으셔도 됩니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>현금 할인 있나요?</h4>
+                    <p>네! 현금 결제 시 5% 추가 할인 적용됩니다. 카드도 가능하지만 현금이면 더 알뜰하게 이용하실 수 있어요.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>남성/여성 관리사 선택 가능한가요?</
+</body>
+</html>
