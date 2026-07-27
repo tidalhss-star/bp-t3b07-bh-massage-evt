@@ -1,194 +1,106 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="charcoal" data-build="a1b2c3d4e5f6a7b8">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-warm-grid">
-    <meta name="description" content="방화 마사지 이벤트 상세 정보! 방화동 1등 마사지샵의 특별한 혜택, 위치, 가격, 후기까지 모두 확인하세요. 전화 010-6279-0862">
-    <meta name="keywords" content="방화 마사지, 방화 마사지 이벤트, 방화동 마사지, 방화 스포츠마사지, 방화 타이마사지, 방화 마사지 가격, 방화 마사지 후기">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://t3b07-bh-massage-evt.vercel.app/info">
-    <meta property="og:title" content="방화 마사지 이벤트 | 상세 정보">
-    <meta property="og:description" content="방화동에서 가장 핫한 마사지 이벤트! 위치, 가격, 종류별 혜택까지 한눈에 확인하세요.">
-    <title>방화 마사지 이벤트 | 상세 정보</title>
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #faf8f5; color: #1a1a1a; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #2d2d2d; text-decoration: none; letter-spacing: -0.5px; }
-        .logo span { color: #e67e22; }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #4a4a4a; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: #e67e22; }
-        .nav-cta { background: #e67e22; color: #fff; padding: 10px 24px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.3s, transform 0.2s; }
-        .nav-cta:hover { background: #d35400; transform: translateY(-2px); }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-        .hamburger span { width: 25px; height: 3px; background: #2d2d2d; border-radius: 2px; transition: 0.3s; }
-        .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #fff8f0 0%, #faf8f5 100%); padding: 80px 20px; }
-        .hero h1 { font-size: 3.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #1a1a1a; }
-        .hero h1 span { color: #e67e22; }
-        .hero p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
-        .hero-cta { display: inline-block; background: #e67e22; color: #fff; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: background 0.3s, transform 0.2s; }
-        .hero-cta:hover { background: #d35400; transform: translateY(-3px); }
-        .section { padding: 80px 0; }
-        .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 16px; color: #1a1a1a; }
-        .section-sub { text-align: center; color: #888; font-size: 1rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .card { background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #2d2d2d; }
-        .card p { color: #666; font-size: 0.95rem; }
-        .price-tag { display: inline-block; background: #e67e22; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .info-item { background: #fff; padding: 20px; border-radius: 12px; border-left: 4px solid #e67e22; }
-        .info-item h4 { font-size: 1rem; color: #e67e22; margin-bottom: 6px; }
-        .info-item p { color: #4a4a4a; font-size: 0.95rem; }
-        .faq-item { border-bottom: 1px solid #e8e5e0; padding: 20px 0; }
-        .faq-item h4 { font-size: 1.1rem; cursor: pointer; color: #2d2d2d; display: flex; justify-content: space-between; align-items: center; }
-        .faq-item h4::after { content: '+'; font-size: 1.3rem; color: #e67e22; }
-        .faq-item p { margin-top: 12px; color: #666; font-size: 0.95rem; display: none; }
-        .faq-item.active p { display: block; }
-        .faq-item.active h4::after { content: '-'; }
-        footer { background: #1a1a1a; color: #aaa; padding: 40px 0; text-align: center; }
-        footer a { color: #e67e22; text-decoration: none; }
-        footer p { font-size: 0.9rem; }
-        @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); gap: 16px; }
-            .nav-links.active { display: flex; }
-            .hamburger { display: flex; }
-            .hero h1 { font-size: 2.2rem; }
-            .grid-2, .grid-3, .info-grid { grid-template-columns: 1fr; }
-            .section { padding: 50px 0; }
-            .section-title { font-size: 1.8rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>방화 마사지 이벤트 – 상세 정보</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="방화 지역에서 진행되는 마사지 이벤트의 상세 정보를 제공합니다. 인원 변동 대비, 현장 운영 체크리스트, 마무리 정산 절차 등 실무자가 반드시 알아야 할 내용들을 한눈에 확인하세요.">
+  <meta name="keywords" content="방화 마사지, 이벤트 상세, 인원 변동, 현장 운영, 마무리 정산">
+  <link rel="canonical" href="https://banghwa-care-trend.mapo-room-guide.xyz/about.html">
+  <meta property="og:title" content="방화 마사지 이벤트 – 상세 정보">
+  <meta property="og:description" content="방화 지역에서 진행되는 마사지 이벤트의 운영 흐름과 체크리스트, 현장 상황별 대응 방안을 상세히 안내합니다.">
+  <meta property="og:url" content="https://banghwa-care-trend.mapo-room-guide.xyz/about.html">
+  <!-- 기존 CSS 파일 그대로 사용 -->
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">방화<span>마사지</span></a>
-            <ul class="nav-links">
-                <li><a href="/">홈</a></li>
-                <li><a href="/info">정보</a></li>
-                <li><a href="/pricing">가격</a></li>
-                <li><a href="/review">후기</a></li>
-            </ul>
-            <a href="tel:010-6279-0862" class="nav-cta">010-6279-0862</a>
-            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">홈</a></li>
+        <li><a href="/checklist">체크리스트</a></li>
+        <li><a href="/info">상세 정보</a></li>
+        <li><a href="/contact">연락처</a></li>
+      </ul>
+      <div class="hamburger-menu"></div>
+    </nav>
+  </header>
 
-    <section class="hero" style="min-height: 50vh; padding: 60px 20px;">
+  <main>
+    <!-- 페이지 상단 타이틀 -->
+    <section class="m-top-wem1">
+      <h1>방화 마사지 이벤트 상세 안내</h1>
+      <p>방화 지역에서 진행되는 마사지 이벤트는 단순히 서비스 제공을 넘어, 현장 관리와 인원 변동 대응, 최종 정산까지 복합적인 과정을 요구합니다. 본 페이지에서는 이벤트 전반에 걸친 핵심 정보를 체계적으로 정리해 실무자가 현장에서 바로 적용할 수 있도록 돕습니다.</p>
+      <p>각 항목은 현장 상황별로 구분하여 제시하므로, 담당자와 현장 스태프가 동일한 기준으로 업무를 수행할 수 있습니다. 현장에 처음 참여하는 팀이라도 이 가이드를 따라 하면 효율적인 운영과 고객 만족을 동시에 달성할 수 있습니다.</p>
+    </section>
+
+    <!-- 운영 흐름 카드 -->
+    <section class="t-wrap-t6qb">
+      <div class="n-btn-p9yg">
         <div>
-            <h1>방화 마사지 <span>상세 정보</span></h1>
-            <p>위치, 운영 시간, 마사지 종류별 설명까지 — 방화동에서 가장 완벽한 마사지 정보를 한곳에 모았어요. 궁금한 건 다 물어보세요!</p>
-            <a href="tel:010-6279-0862" class="hero-cta">전화로 예약하기</a>
+          <h2>1️⃣ 사전 준비 단계</h2>
+          <p>이벤트 시작 전 최소 7일 전부터 예약 시스템과 연락 창구를 점검합니다. 예약 캘린더와 통합된 스프레드시트를 활용해 인원 변동을 실시간으로 파악하고, 예상 인원 변동 시 시뮬레이션을 수행합니다.</p>
+          <p>또한 현장 장비와 물품 체크리스트를 완성하고, 담당자 전용 QR 코드 안내문을 제작해 참가자들에게 사전 배포합니다. 이 단계에서 누락된 항목이 있으면 현장 운영에 차질이 생길 수 있으니 체크리스트를 2번 이상 검증합니다.</p>
         </div>
+      </div>
+
+      <div class="n-btn-p9yg">
+        <div>
+          <h2>2️⃣ 현장 운영 단계</h2>
+          <p>현장에 도착하면 먼저 접수 데스크를 설치하고, 방문객 흐름을 관찰해 대기 시간을 최소화합니다. 인원 변동이 발생하면 즉시 실시간 인원 관리표에 반영하고, 스태프 재배치를 통해 서비스 품질을 유지합니다.</p>
+          <p>특히 고객 별 맞춤형 마사지 코스와 시간대를 명확히 구분해 예약 충돌을 방지하고, 긴급 상황 발생 시 대처 매뉴얼을 즉시 적용합니다. 현장에서는 조명, 온도, 사운드 등 물리적 환경을 지속적으로 모니터링해 최적의 분위기를 제공합니다.</p>
+        </div>
+      </div>
+
+      <div class="n-btn-p9yg">
+        <div>
+          <h2>3️⃣ 마무리·정산 단계</h2>
+          <p>이벤트 종료 후에는 모든 서비스 이용 내역을 데이터베이스에 정리하고, 결제 내역과 현금 영수증을 교차 검증합니다. 인원 변동에 따른 비용 조정이 필요한 경우, 사전 계약서에 명시된 가산 요금을 적용해 정확히 정산합니다.</p>
+          <p>정산 보고서는 엑셀 파일과 PDF 파일 두 가지 형식으로 작성해 담당자에게 공유하고, 고객 피드백 설문을 통해 차후 개선 포인트를 도출합니다. 정산 완료 후에는 현장 청소와 장비 점검을 마무리해 다음 이벤트를 위한 준비를 끝냅니다.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="section" style="background: #fff;">
-        <div class="container">
-            <h2 class="section-title">기본 정보</h2>
-            <p class="section-sub">방화동 중심가에 위치, 언제든지 편하게 방문하세요.</p>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h4>📍 위치</h4>
-                    <p>서울 강서구 방화동 123-45 (방화역 3번 출구 도보 3분)</p>
-                </div>
-                <div class="info-item">
-                    <h4>🕐 운영 시간</h4>
-                    <p>매일 10:00 - 22:00 (연중무휴, 전화 예약 시 22시 이후도 가능)</p>
-                </div>
-                <div class="info-item">
-                    <h4>📞 연락처</h4>
-                    <p>010-6279-0862 (문자, 전화 모두 OK)</p>
-                </div>
-                <div class="info-item">
-                    <h4>🏠 주차</h4>
-                    <p>매장 앞 2대 가능, 인근 공영주차장 5분 거리</p>
-                </div>
-            </div>
-        </div>
+    <!-- 체크리스트 상세 -->
+    <section class="t-wrap-t6qb">
+      <h2>🔎 체크리스트 – 상황별 필수 확인 항목</h2>
+
+      <h3>① 인원 변동 시점별 대응</h3>
+      <p><strong>사전(예정) 변동:</strong> 예약 시스템에 자동 알림을 설정해 변동이 발생하면 담당자에게 SMS로 즉시 통보합니다. 인원 감소 시 인력 재배치를 검토하고, 증가 시 여분 인력을 투입해 서비스 지연을 방지합니다.</p>
+      <p><strong>현장(실시간) 변동:</strong> 현장 스태프가 실시간 인원표를 업데이트하고, 변동 규모가 10명 이상이면 즉시 책임자와 협의해 추가 인원을 투입하거나 일정 조정을 진행합니다.</p>
+
+      <h3>② 목적별 운영 포인트</h3>
+      <p><strong>홍보·마케팅 목적:</strong> 현장에 포토존을 설치하고 SNS 해시태그를 지정해 실시간 게시를 유도합니다. 이벤트 진행 중 현장 스태프가 사진을 촬영해 바로 공유하면 바이럴 효과를 높일 수 있습니다.</p>
+      <p><strong>고객 만족도 향상 목적:</strong> 고객별 선호 마사지 강도와 시간대를 사전 설문으로 파악해 맞춤 서비스를 제공하고, 종료 후 만족도 조사에서 8점 이상을 목표로 합니다.</p>
+
+      <h3>③ 시점별 마무리 검증</h3>
+      <p><strong>이벤트 종료 직후:</strong> 현장 청소 체크리스트와 장비 점검표를 각각 서명받아 기록합니다. 모든 물품이 정상 귀환되었는지 확인하고, 분실·파손 여부를 사진으로 증빙합니다.</p>
+      <p><strong>정산 전날:</strong> 모든 결제 데이터를 정리해 회계팀에 전달하고, 예상 정산액과 실제 입금액을 비교해 차액이 발생하면 원인을 분석해 보고합니다.</p>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">마사지 종류별 특징</h2>
-            <p class="section-sub">각 마사지가 뭔지, 누구한테 좋은지 친절하게 설명해드릴게요.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>💪 스포츠마사지</h3>
-                    <p>운동 후 근육 뭉침 풀어주는 딥티슈 마사지. 평소 운동 많이 하시거나, 허리/어깨 결리시는 분들한테 강추! 약간 시원하게 아픈데 풀리고 나면 개운함이 남달라요.</p>
-                    <span class="price-tag">60분 70,000원</span>
-                </div>
-                <div class="card">
-                    <h3>🖐️ 타이마사지</h3>
-                    <p>스트레칭 위주의 전신 마사지. 누르고 당기고 비트는 동작으로 몸이 가벼워지는 느낌이에요. 유연성 좋아지고 싶은 분들, 장시간 앉아계신 분들께 딱이에요.</p>
-                    <span class="price-tag">60분 60,000원</span>
-                </div>
-                <div class="card">
-                    <h3>👊 지압마사지</h3>
-                    <p>경혈과 혈자리 중심으로 꾹꾹 눌러주는 마사지. 피로 회복, 혈액순환에 좋고 만성 피로 있으신 분들께 강력 추천. 잔 근육까지 시원하게 풀려요.</p>
-                    <span class="price-tag">60분 65,000원</span>
-                </div>
-            </div>
-        </div>
+    <!-- FAQ -->
+    <section class="t-wrap-t6qb">
+      <h2>❓ 자주 묻는 질문</h2>
+
+      <h3>Q1. 인원 변동이 급격히 발생하면 어떻게 대처하나요?</h3>
+      <p>A1. 현장 인원 관리표에 실시간으로 업데이트하고, 사전 계약에 명시된 가산 요금을 적용해 추가 인력을 투입합니다. 변동이 20명 이상일 경우, 전체 일정 재조정 및 고객 개별 알림을 진행합니다.</p>
+
+      <h3>Q2. 마무리 정산 시 체크해야 할 핵심 포인트는?</h3>
+      <p>A2. 결제 내역과 현금 영수증을 교차 검증하고, 인원 변동에 따른 비용 조정표를 적용합니다. 정산 보고서는 엑셀·PDF 두 형태로 저장하고, 회계 팀과 최종 서명을 받아야 합니다.</p>
+
+      <h3>Q3. 현장에 예상 외 장비 고장이 발생하면?</h3>
+      <p>A3. 비상 장비 대체 목록을 미리 준비해 두고, 고장이 발생하면 즉시 대체 장비로 교체합니다. 동시에 현장 매니저에게 보고해 고객에게 상황을 투명하게 안내하고, 필요 시 일정 조정을 진행합니다.</p>
     </section>
 
-    <section class="section" style="background: #fff;">
-        <div class="container">
-            <h2 class="section-title">이벤트 & 혜택</h2>
-            <p class="section-sub">지금 방문하면 특별한 혜택이 기다리고 있어요.</p>
-            <div class="grid-2">
-                <div class="card" style="border: 2px solid #e67e22;">
-                    <h3>🎉 첫 방문 이벤트</h3>
-                    <p>처음 오시는 분들께 10% 할인 + 10분 추가 서비스! "친구 추천으로 왔어요"라고 말씀해주시면 15분 더 추가해드려요.</p>
-                </div>
-                <div class="card">
-                    <h3>🔥 재방문 할인</h3>
-                    <p>두 번째 방문부터 5% 할인, 세 번째 방문 10% 할인! 단골 손님일수록 더 큰 혜택을 드려요. 매번 같은 관리사님 배정 가능.</p>
-                </div>
-                <div class="card">
-                    <h3>👥 2인 이상 할인</h3>
-                    <p>친구, 연인, 가족과 함께 오시면 1인당 10% 할인! 둘이서 120분 코스 예약하면 각자 15% 할인까지.</p>
-                </div>
-                <div class="card">
-                    <h3>⏰ 타임 세일</h3>
-                    <p>평일 오전 10시~12시 방문 시 20% 할인! 오전에 시간 되시는 분들은 진짜 알뜰하게 이용하세요. 오전 예약은 전화로만 가능해요.</p>
-                </div>
-            </div>
-        </div>
+    <section class="n-btn-p9yg">
+      <div>
+        <a href="/contact" class="cta-button">추가 문의 바로가기</a>
+      </div>
     </section>
+  </main>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">자주 묻는 질문</h2>
-            <p class="section-sub">처음 오시는 분들이 자주 물어보는 질문들을 모았어요. 부담 없이 물어보세요!</p>
-            <div style="max-width: 700px; margin: 0 auto;">
-                <div class="faq-item active">
-                    <h4>예약은 어떻게 하나요?</h4>
-                    <p>전화 010-6279-0862로 언제든지 연락주세요. 문자도 가능하고, 당일 예약도 환영이에요. 원하는 시간과 마사지 종류만 말씀해주시면 됩니다.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>첫 방문인데 뭘 골라야 할까요?</h4>
-                    <p>처음이시면 타이마사지 추천드려요! 부담 없이 전신 스트레칭 받으면서 몸 상태를 체크해보세요. 나중에 원하시면 스포츠나 지압도 추천해드려요.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>옷은 어떻게 입고 가나요?</h4>
-                    <p>편한 옷 입고 오시면 돼요! 샤워 가능하고, 수건과 가운은 무료로 제공해드려요. 속옷만 입고 받으셔도 되고, 저희가 준비한 옷으로 갈아입으셔도 됩니다.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>현금 할인 있나요?</h4>
-                    <p>네! 현금 결제 시 5% 추가 할인 적용됩니다. 카드도 가능하지만 현금이면 더 알뜰하게 이용하실 수 있어요.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>남성/여성 관리사 선택 가능한가요?</
+  <footer>
+    <p>&copy; 2026 방화 마사지 이벤트 가이드. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
